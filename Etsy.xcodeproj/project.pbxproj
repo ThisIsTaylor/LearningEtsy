@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5644493559E8488A83B1AE4E /* libPods-Etsy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 698A3EC327EE4398967C2442 /* libPods-Etsy.a */; };
+		708994AA194F925600BAAC87 /* TEMCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 708994A8194F925600BAAC87 /* TEMCollectionViewController.m */; };
+		708994AB194F925600BAAC87 /* TEMCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708994A9194F925600BAAC87 /* TEMCollectionViewController.xib */; };
+		708994AD194F92B600BAAC87 /* TEMProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708994AC194F92B600BAAC87 /* TEMProductCell.xib */; };
 		709F7053194B4B68003DA35F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709F7052194B4B68003DA35F /* Foundation.framework */; };
 		709F7055194B4B68003DA35F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709F7054194B4B68003DA35F /* CoreGraphics.framework */; };
 		709F7057194B4B68003DA35F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709F7056194B4B68003DA35F /* UIKit.framework */; };
@@ -18,7 +22,15 @@
 		709F706D194B4B68003DA35F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709F7052194B4B68003DA35F /* Foundation.framework */; };
 		709F706E194B4B68003DA35F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709F7056194B4B68003DA35F /* UIKit.framework */; };
 		709F7076194B4B68003DA35F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 709F7074194B4B68003DA35F /* InfoPlist.strings */; };
-		709F7078194B4B68003DA35F /* EtsyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709F7077194B4B68003DA35F /* EtsyTests.m */; };
+		70A453DC194B4DF5008E03D4 /* TEMEtsyServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A453DB194B4DF5008E03D4 /* TEMEtsyServiceSpec.m */; };
+		70A453DF194B4E57008E03D4 /* TEMEtsyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A453DE194B4E57008E03D4 /* TEMEtsyService.m */; };
+		70A453E3194B8611008E03D4 /* TEMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A453E1194B8611008E03D4 /* TEMViewController.m */; };
+		70A453E4194B8611008E03D4 /* TEMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A453E2194B8611008E03D4 /* TEMViewController.xib */; };
+		70D987FD1951E7D900480FEE /* TEMProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D987FC1951E7D900480FEE /* TEMProductCell.m */; };
+		70DCDD6B194F387900544AB9 /* sampleEtsy.json in Resources */ = {isa = PBXBuildFile; fileRef = 70DCDD6A194F387900544AB9 /* sampleEtsy.json */; };
+		70DCDD6D194F486600544AB9 /* TEMViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCDD6C194F486600544AB9 /* TEMViewControllerSpec.m */; };
+		70DCDD6F194F487100544AB9 /* TEMAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCDD6E194F487100544AB9 /* TEMAppDelegateSpec.m */; };
+		8E83AF2F9F204B1ABBAB0A23 /* libPods-EtsyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D953A9B1F84B8C92237001 /* libPods-EtsyTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37D953A9B1F84B8C92237001 /* libPods-EtsyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EtsyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		698A3EC327EE4398967C2442 /* libPods-Etsy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Etsy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EB3B6537D004DD69128F697 /* Pods-EtsyTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtsyTests.xcconfig"; path = "Pods/Pods-EtsyTests.xcconfig"; sourceTree = "<group>"; };
+		708994A7194F925600BAAC87 /* TEMCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMCollectionViewController.h; sourceTree = "<group>"; };
+		708994A8194F925600BAAC87 /* TEMCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMCollectionViewController.m; sourceTree = "<group>"; };
+		708994A9194F925600BAAC87 /* TEMCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMCollectionViewController.xib; sourceTree = "<group>"; };
+		708994AC194F92B600BAAC87 /* TEMProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMProductCell.xib; sourceTree = "<group>"; };
 		709F704F194B4B68003DA35F /* Etsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709F7052194B4B68003DA35F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		709F7054194B4B68003DA35F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,7 +66,18 @@
 		709F706B194B4B68003DA35F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		709F7073194B4B68003DA35F /* EtsyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EtsyTests-Info.plist"; sourceTree = "<group>"; };
 		709F7075194B4B68003DA35F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		709F7077194B4B68003DA35F /* EtsyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EtsyTests.m; sourceTree = "<group>"; };
+		70A453DB194B4DF5008E03D4 /* TEMEtsyServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMEtsyServiceSpec.m; sourceTree = "<group>"; };
+		70A453DD194B4E57008E03D4 /* TEMEtsyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMEtsyService.h; sourceTree = "<group>"; };
+		70A453DE194B4E57008E03D4 /* TEMEtsyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMEtsyService.m; sourceTree = "<group>"; };
+		70A453E0194B8611008E03D4 /* TEMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMViewController.h; sourceTree = "<group>"; };
+		70A453E1194B8611008E03D4 /* TEMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMViewController.m; sourceTree = "<group>"; };
+		70A453E2194B8611008E03D4 /* TEMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMViewController.xib; sourceTree = "<group>"; };
+		70D987FB1951E7D900480FEE /* TEMProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMProductCell.h; sourceTree = "<group>"; };
+		70D987FC1951E7D900480FEE /* TEMProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMProductCell.m; sourceTree = "<group>"; };
+		70DCDD6A194F387900544AB9 /* sampleEtsy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleEtsy.json; sourceTree = "<group>"; };
+		70DCDD6C194F486600544AB9 /* TEMViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMViewControllerSpec.m; sourceTree = "<group>"; };
+		70DCDD6E194F487100544AB9 /* TEMAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMAppDelegateSpec.m; sourceTree = "<group>"; };
+		7C3E7E35DBFD4170AB5974E4 /* Pods-Etsy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etsy.xcconfig"; path = "Pods/Pods-Etsy.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +88,7 @@
 				709F7055194B4B68003DA35F /* CoreGraphics.framework in Frameworks */,
 				709F7057194B4B68003DA35F /* UIKit.framework in Frameworks */,
 				709F7053194B4B68003DA35F /* Foundation.framework in Frameworks */,
+				5644493559E8488A83B1AE4E /* libPods-Etsy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +99,7 @@
 				709F706C194B4B68003DA35F /* XCTest.framework in Frameworks */,
 				709F706E194B4B68003DA35F /* UIKit.framework in Frameworks */,
 				709F706D194B4B68003DA35F /* Foundation.framework in Frameworks */,
+				8E83AF2F9F204B1ABBAB0A23 /* libPods-EtsyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +113,8 @@
 				709F7071194B4B68003DA35F /* EtsyTests */,
 				709F7051194B4B68003DA35F /* Frameworks */,
 				709F7050194B4B68003DA35F /* Products */,
+				7C3E7E35DBFD4170AB5974E4 /* Pods-Etsy.xcconfig */,
+				6EB3B6537D004DD69128F697 /* Pods-EtsyTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +134,8 @@
 				709F7054194B4B68003DA35F /* CoreGraphics.framework */,
 				709F7056194B4B68003DA35F /* UIKit.framework */,
 				709F706B194B4B68003DA35F /* XCTest.framework */,
+				698A3EC327EE4398967C2442 /* libPods-Etsy.a */,
+				37D953A9B1F84B8C92237001 /* libPods-EtsyTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +145,17 @@
 			children = (
 				709F7061194B4B68003DA35F /* TEMAppDelegate.h */,
 				709F7062194B4B68003DA35F /* TEMAppDelegate.m */,
+				70A453DD194B4E57008E03D4 /* TEMEtsyService.h */,
+				70A453DE194B4E57008E03D4 /* TEMEtsyService.m */,
+				70A453E0194B8611008E03D4 /* TEMViewController.h */,
+				70A453E1194B8611008E03D4 /* TEMViewController.m */,
+				70A453E2194B8611008E03D4 /* TEMViewController.xib */,
+				708994A7194F925600BAAC87 /* TEMCollectionViewController.h */,
+				708994A8194F925600BAAC87 /* TEMCollectionViewController.m */,
+				708994A9194F925600BAAC87 /* TEMCollectionViewController.xib */,
+				70D987FB1951E7D900480FEE /* TEMProductCell.h */,
+				70D987FC1951E7D900480FEE /* TEMProductCell.m */,
+				708994AC194F92B600BAAC87 /* TEMProductCell.xib */,
 				709F7064194B4B68003DA35F /* Images.xcassets */,
 				709F7059194B4B68003DA35F /* Supporting Files */,
 			);
@@ -129,7 +176,10 @@
 		709F7071194B4B68003DA35F /* EtsyTests */ = {
 			isa = PBXGroup;
 			children = (
-				709F7077194B4B68003DA35F /* EtsyTests.m */,
+				70A453DB194B4DF5008E03D4 /* TEMEtsyServiceSpec.m */,
+				70DCDD6C194F486600544AB9 /* TEMViewControllerSpec.m */,
+				70DCDD6E194F487100544AB9 /* TEMAppDelegateSpec.m */,
+				70DCDD6A194F387900544AB9 /* sampleEtsy.json */,
 				709F7072194B4B68003DA35F /* Supporting Files */,
 			);
 			path = EtsyTests;
@@ -151,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 709F707B194B4B68003DA35F /* Build configuration list for PBXNativeTarget "Etsy" */;
 			buildPhases = (
+				B644AB4086584F7FBF110920 /* Check Pods Manifest.lock */,
 				709F704B194B4B68003DA35F /* Sources */,
 				709F704C194B4B68003DA35F /* Frameworks */,
 				709F704D194B4B68003DA35F /* Resources */,
+				404DB93210384A74BE8163BD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 709F707E194B4B68003DA35F /* Build configuration list for PBXNativeTarget "EtsyTests" */;
 			buildPhases = (
+				680EE4CC4816494A944F608E /* Check Pods Manifest.lock */,
 				709F7066194B4B68003DA35F /* Sources */,
 				709F7067194B4B68003DA35F /* Frameworks */,
 				709F7068194B4B68003DA35F /* Resources */,
+				BF47F15C7D4546B394E92FD9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				709F705D194B4B68003DA35F /* InfoPlist.strings in Resources */,
+				708994AB194F925600BAAC87 /* TEMCollectionViewController.xib in Resources */,
+				70A453E4194B8611008E03D4 /* TEMViewController.xib in Resources */,
+				708994AD194F92B600BAAC87 /* TEMProductCell.xib in Resources */,
 				709F7065194B4B68003DA35F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,11 +286,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70DCDD6B194F387900544AB9 /* sampleEtsy.json in Resources */,
 				709F7076194B4B68003DA35F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		404DB93210384A74BE8163BD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Etsy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		680EE4CC4816494A944F608E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B644AB4086584F7FBF110920 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF47F15C7D4546B394E92FD9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-EtsyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		709F704B194B4B68003DA35F /* Sources */ = {
@@ -242,6 +363,10 @@
 			files = (
 				709F705F194B4B68003DA35F /* main.m in Sources */,
 				709F7063194B4B68003DA35F /* TEMAppDelegate.m in Sources */,
+				70D987FD1951E7D900480FEE /* TEMProductCell.m in Sources */,
+				70A453DF194B4E57008E03D4 /* TEMEtsyService.m in Sources */,
+				708994AA194F925600BAAC87 /* TEMCollectionViewController.m in Sources */,
+				70A453E3194B8611008E03D4 /* TEMViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +374,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709F7078194B4B68003DA35F /* EtsyTests.m in Sources */,
+				70DCDD6F194F487100544AB9 /* TEMAppDelegateSpec.m in Sources */,
+				70DCDD6D194F486600544AB9 /* TEMViewControllerSpec.m in Sources */,
+				70A453DC194B4DF5008E03D4 /* TEMEtsyServiceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +484,7 @@
 		};
 		709F707C194B4B68003DA35F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C3E7E35DBFD4170AB5974E4 /* Pods-Etsy.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -370,6 +498,7 @@
 		};
 		709F707D194B4B68003DA35F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C3E7E35DBFD4170AB5974E4 /* Pods-Etsy.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -383,6 +512,7 @@
 		};
 		709F707F194B4B68003DA35F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EB3B6537D004DD69128F697 /* Pods-EtsyTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Etsy.app/Etsy";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -405,6 +535,7 @@
 		};
 		709F7080194B4B68003DA35F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EB3B6537D004DD69128F697 /* Pods-EtsyTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Etsy.app/Etsy";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -440,6 +571,7 @@
 				709F707D194B4B68003DA35F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		709F707E194B4B68003DA35F /* Build configuration list for PBXNativeTarget "EtsyTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +580,7 @@
 				709F7080194B4B68003DA35F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
