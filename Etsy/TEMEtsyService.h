@@ -21,6 +21,5 @@
 
 //Network Call Methods for Collection View
 - (void)getEtsyStoreItems: (void (^)(NSArray *))successBlock;
-- (void)getEtsyProductNames: (void (^)(NSString *))successBlock;
 
 @end

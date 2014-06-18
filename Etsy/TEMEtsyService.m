@@ -79,17 +79,5 @@
                        failure:nil];
 }
 
-- (void)getEtsyProductNames: (void (^)(NSString *))successBlock{
-    void (^newSuccessBlock)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject){
-        NSString *etsyProductNames = [[[responseObject valueForKey:@"results"]allObjects] valueForKeyPath:@"title"];
-        successBlock(etsyProductNames);
-    };
-    
-    [self.operationManager GET:@"https://openapi.etsy.com/v2/shops/BritzyThrifty/listings/active?api_key=sit1ohd4fxo7ojty36trvuj9&includes=MainImage"
-                    parameters:nil
-                       success:newSuccessBlock
-                       failure:nil];
-}
-
 
 @end

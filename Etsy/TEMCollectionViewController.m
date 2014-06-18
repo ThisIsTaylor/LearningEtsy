@@ -60,34 +60,17 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [self.productCollecionView dequeueReusableCellWithReuseIdentifier:@"EtsyProductCell" forIndexPath:indexPath];
+    TEMProductCell *cell = [self.productCollecionView dequeueReusableCellWithReuseIdentifier:@"EtsyProductCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
+    cell.productLabel.numberOfLines = 2;
     
-    TEMEtsyService *etsyService = [[TEMEtsyService alloc] init];
-    TEMProductCell *productCell = [[TEMProductCell alloc] init];
     
-//    void (^successBlock)(NSArray *) = ^(NSArray *etsyStoreItems){
-////        NSString *productNamesString = [[etsyStoreItems valueForKey:@"results"] valueForKey:@"title"];
-////        NSString *productNamesString = [[[etsyStoreItems objectAtIndex:indexPath.row] valueForKeyPath:@"results"] valueForKeyPath:[NSString stringWithFormat:@"title"]];
-//        etsyStoreItems = [self.storeItems objectAtIndex:indexPath.row];
-//        NSString *productNamesString = [NSString stringWithFormat:@"title"];
-//        UILabel *productNameLabel = productCell.productLabel;
-//        [productNameLabel setText:productNamesString];
-//    };
-//    
-//    [etsyService getEtsyStoreItems:successBlock];
-    
-    void (^successBlock)(NSString *) = ^(NSString *etsyProductNames){
-        NSString *productNameString = etsyProductNames;
-        UILabel *productNameLabel = productCell.productLabel;
-        [productNameLabel setText:productNameString];
-
-    };
-    
-    [etsyService getEtsyProductNames:successBlock];
+    if (self.storeItems) {
+        NSString *productName = [[self.storeItems objectAtIndex:indexPath.row] valueForKey:@"title"];
+        [cell.productLabel setText:productName];
+    }
     
     return cell;
-    
 };
 
 
