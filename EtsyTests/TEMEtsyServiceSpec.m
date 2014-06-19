@@ -93,33 +93,35 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
                     
                     void (^blockThatGetsStoreSummary)(NSString *) = ^(NSString *storeSummary){
                         reportedSummary = storeSummary;
-                    };
+                };
                     [etsyService getEtsyStoreSummary:blockThatGetsStoreSummary];
                     NSString *summaryReportedByOHHTTPStubs = @"Britzy Thrifty began with a love of thrifting & vintage finds that resulted in a closet bursting at the seams, & ended up as a Michigan based Etsy shop.\r\n\r\nVisit frequently for the latest finds in unique vintage fashions. Shopping for vintage clothing is a great way to live a greener lifestyle. \r\n\r\nWhile you're at it... come check out @BritzyThrifty on Instagram, Pinterest & Twitter for photos of our latest #thriftscores & thrifting tips.";
                     
                     [[expectFutureValue(reportedSummary) shouldEventuallyBeforeTimingOutAfter(1.0)] equal:summaryReportedByOHHTTPStubs];
                 }];
             });
+            
             context(@"When getEtsyStoreItems", ^{
-                xit(@"Should count the correct number of product items in store", ^{
+                it(@"Should count the correct number of product items in store", ^{
                     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                         return [[request.URL absoluteString] isEqualToString:urlProductString];
                     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-                        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"sampleEtsyProducts.json", nil) statusCode:200 headers:@{@"Content-Type":@"tex/json"}];
-                        
-                        __block NSArray *reportedItems;
-                        __block NSInteger *productCount;
-                        
-                        void (^blockThatGetsStoreItems)(NSArray *) = ^(NSArray *numberOfItems){
-                            reportedItems = [numberOfItems valueForKey:@"results"];
-                            productCount = [reportedItems count];
-                        };
-                        
+                        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"sampleEtsyProducts.json", nil) statusCode:200 headers:@{@"Content-Type":@"text/json"}];
+                    }];
+                     
+                     __block NSArray *reportedItems;
+                     __block NSInteger productCount;
+                     
+                     void (^blockThatGetsStoreItems)(NSArray *) = ^(NSArray *numberOfItems){
+                         reportedItems = [numberOfItems valueForKey:@"results"];
+                         productCount = [reportedItems count];
+                         
+                     };
+                     
                         [etsyService getEtsyStoreItems:blockThatGetsStoreItems];
-                        NSInteger reportedNumber = 19;
+                        NSInteger reportedNumber = 17;
                     
                         [[expectFutureValue(theValue(productCount)) shouldEventuallyBeforeTimingOutAfter(1.0)] equal:theValue(reportedNumber)];
-                    }];
                 });
             });
         });
