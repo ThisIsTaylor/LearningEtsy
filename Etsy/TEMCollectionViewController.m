@@ -8,6 +8,8 @@
 
 #import "TEMCollectionViewController.h"
 #import "TEMProductCell.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
 
 
 @interface TEMCollectionViewController () 
@@ -61,10 +63,14 @@
     cell.backgroundColor = [UIColor whiteColor];
     cell.productLabel.numberOfLines = 2;
     
+    NSURL *imageURL = [NSURL URLWithString:[[[self.storeItems objectAtIndex:indexPath.row] valueForKeyPath:@"MainImage"] valueForKeyPath:@"url_170x135"]];
+    
     
     if (self.storeItems) {
         NSString *productName = [[self.storeItems objectAtIndex:indexPath.row] valueForKey:@"title"];
         [cell.productLabel setText:productName];
+        
+        [cell.productImageView setImageWithURL:imageURL];
     }
     
     return cell;
