@@ -15,5 +15,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *storeTitle;
 @property (nonatomic, weak) IBOutlet UILabel *numberOfListings;
 @property (nonatomic, weak) IBOutlet UITextView *storeSummary;
+@property (nonatomic) NSArray *etsyStore;
 
 @end

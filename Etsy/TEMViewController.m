@@ -28,30 +28,32 @@
 {
     [super viewDidLoad];
     
-    void (^successBlock)(NSString *) = ^(NSString *etsyStoreName){
-        NSString *shopNameAsString = etsyStoreName;
+    [self populatesStoreTextFromEtsy];
+    
+}
+
+- (void)populatesStoreTextFromEtsy {
+    
+    void (^successBlock)(NSArray *) = ^(NSArray *etsyStore){
+        self.etsyStore = self.etsyService.etsyStore;
+        
+        NSString *shopNameAsString = [[self.etsyStore firstObject] valueForKeyPath: @"shop_name"];
         UILabel *shopName = self.storeTitle;
         [shopName setText:shopNameAsString];
-    };
-    
-    [self.etsyService getEtsyStore:successBlock];
-    
-    void (^secondSuccessBlock)(NSInteger) = ^(NSInteger currentListingNumber){
-        NSString *listingString = [@(currentListingNumber) stringValue];
+        
+        NSNumber *listingCount = [[self.etsyStore firstObject] valueForKeyPath:@"listing_active_count"];
+        NSInteger listingNumber = [listingCount integerValue];
+        NSString *listingString = [@(listingNumber) stringValue];
         UILabel *listingNumberLabel = self.numberOfListings;
         [listingNumberLabel setText:listingString];
-    };
-    
-    [self.etsyService getEtsyListingNumber:secondSuccessBlock];
-    
-    void (^thirdSuccessBlock)(NSString *) = ^(NSString *etsyStoreSummary){
-        NSString *storeSummaryAsString = etsyStoreSummary;
+        
+        NSString *storeSummaryAsString = [[self.etsyStore firstObject] valueForKeyPath:@"announcement"];
         UITextView *storeSummaryTextView = self.storeSummary;
         [storeSummaryTextView setText:storeSummaryAsString];
     };
     
-    [self.etsyService getEtsyStoreSummary:thirdSuccessBlock];
-    
+    [self.etsyService getEtsyStore:successBlock];
+
 }
 
 - (IBAction)productButtonPressed:(id)sender {
@@ -59,8 +61,6 @@
     TEMCollectionViewController *productCollectionView = productCollectionView = [[TEMCollectionViewController alloc] initWithNibName:@"TEMCollectionViewController" bundle:nil];
     [self.navigationController pushViewController:productCollectionView animated:YES];
     
-//    self.eventsViewController =[[EventsViewController alloc]initWithNibName:@"EventsViewController" bundle:nil];
-//    [self.navigationController pushViewController:eventsViewController animated:YES];
 }
 
 

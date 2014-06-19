@@ -29,14 +29,6 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
             [[etsyService should] respondToSelector:@selector(getEtsyStore:)];
         });
         
-        it(@"should have a getEtsyListingNumber method", ^{
-            [[etsyService should] respondToSelector:@selector(getEtsyListingNumber:)];
-        });
-        
-        it(@"should have a getEtsyStoreSummary method", ^{
-            [[etsyService should] respondToSelector:@selector(getEtsyStoreSummary:)];
-        });
-        
         it(@"it should have an operationManager property", ^{
             [[etsyService.operationManager should] beKindOfClass:[AFHTTPRequestOperationManager class]];
         });
@@ -51,8 +43,8 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
                 
                 __block NSString *reportedStoreName;
                 
-                void (^blockThatGetsEtsyStoreName)(NSString *) = ^(NSString *etsyStoreName){
-                    reportedStoreName = etsyStoreName;
+                void (^blockThatGetsEtsyStoreName)(NSArray *) = ^(NSArray *etsyStore){
+                    reportedStoreName = [[etsyStore firstObject] valueForKeyPath: @"shop_name"];
                 };
                 
                 [etsyService getEtsyStore:blockThatGetsEtsyStoreName];
@@ -72,10 +64,12 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
                 
                 __block NSInteger reportedListingNumber;
                 
-                void (^blockThatGetsListingNumber)(NSInteger) = ^(NSInteger listingNumber){
-                    reportedListingNumber = listingNumber;
+                void (^blockThatGetsListingNumber)(NSArray *) = ^(NSArray *etsyStore){
+                    NSNumber *aNumber = [[etsyStore firstObject] valueForKeyPath:@"listing_active_count"];
+                    reportedListingNumber = [aNumber integerValue];
                 };
-                [etsyService getEtsyListingNumber:blockThatGetsListingNumber];
+                
+                [etsyService getEtsyStore:blockThatGetsListingNumber];
                 NSInteger listingNumberReportedByOHHTTPStubs = 21;
                 
                 [[expectFutureValue(theValue(reportedListingNumber)) shouldEventuallyBeforeTimingOutAfter(1.0)] equal:theValue(listingNumberReportedByOHHTTPStubs)];
@@ -91,10 +85,11 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
                     
                     __block NSString *reportedSummary;
                     
-                    void (^blockThatGetsStoreSummary)(NSString *) = ^(NSString *storeSummary){
-                        reportedSummary = storeSummary;
+                    void (^blockThatGetsStoreSummary)(NSArray *) = ^(NSArray *etsyStore){
+                        reportedSummary = [[etsyStore firstObject] valueForKeyPath: @"announcement"];
                 };
-                    [etsyService getEtsyStoreSummary:blockThatGetsStoreSummary];
+                    [etsyService getEtsyStore:blockThatGetsStoreSummary];
+                    
                     NSString *summaryReportedByOHHTTPStubs = @"Britzy Thrifty began with a love of thrifting & vintage finds that resulted in a closet bursting at the seams, & ended up as a Michigan based Etsy shop.\r\n\r\nVisit frequently for the latest finds in unique vintage fashions. Shopping for vintage clothing is a great way to live a greener lifestyle. \r\n\r\nWhile you're at it... come check out @BritzyThrifty on Instagram, Pinterest & Twitter for photos of our latest #thriftscores & thrifting tips.";
                     
                     [[expectFutureValue(reportedSummary) shouldEventuallyBeforeTimingOutAfter(1.0)] equal:summaryReportedByOHHTTPStubs];
