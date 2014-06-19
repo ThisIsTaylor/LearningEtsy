@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9E9372F2-D9CC-48EC-B8FD-47FF29E21730</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Etsy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>438F215D-550D-4A0C-AFCF-B3D4F1721C80</key>
+		<string>ssh://github.com/ThisIsTaylor/LearningEtsy.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Etsy.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>438F215D-550D-4A0C-AFCF-B3D4F1721C80</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/ThisIsTaylor/LearningEtsy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>438F215D-550D-4A0C-AFCF-B3D4F1721C80</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>438F215D-550D-4A0C-AFCF-B3D4F1721C80</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Etsy</string>
+		</dict>
+	</array>
+</dict>
+</plist>

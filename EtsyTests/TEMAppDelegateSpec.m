@@ -8,7 +8,6 @@
 
 #import <Kiwi/Kiwi.h>
 #import "TEMAppDelegate.h"
-#import "TEMViewController.h"
 
 SPEC_BEGIN(TEMAppDelegateSpec)
 
@@ -17,7 +16,7 @@ SPEC_BEGIN(TEMAppDelegateSpec)
             TEMAppDelegate *appDelegate = [[TEMAppDelegate alloc] init];
             [appDelegate application:nil didFinishLaunchingWithOptions:nil];
             
-            [[appDelegate.window.rootViewController should]beKindOfClass:[TEMViewController class]];
+            [[appDelegate.window.rootViewController should]beKindOfClass:[UINavigationController class]];
         });
 
 	});

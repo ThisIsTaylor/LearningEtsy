@@ -7,7 +7,6 @@
 //
 
 #import "TEMCollectionViewController.h"
-#import "TEMEtsyService.h"
 #import "TEMProductCell.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
@@ -23,7 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        self.etsyService = [[TEMEtsyService alloc]init];
     }
     return self;
 }
@@ -35,15 +34,13 @@
     [self.productCollecionView registerNib:[UINib nibWithNibName:@"TEMProductCell" bundle:nil] forCellWithReuseIdentifier:@"EtsyProductCell"];
     self.productCollecionView.backgroundColor = [UIColor whiteColor];
     
-    TEMEtsyService *etsyService = [[TEMEtsyService alloc] init];
-    
     void (^successBlock)(NSArray *) = ^(NSArray *etsyStoreItems){
-        self.storeItems = etsyService.etsyStoreItems;
+        self.storeItems = self.etsyService.etsyStoreItems;
         
         [self.productCollecionView reloadData];
     };
     
-    [etsyService getEtsyStoreItems:successBlock];
+    [self.etsyService getEtsyStoreItems:successBlock];
     
 }
 
@@ -52,7 +49,6 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    NSLog(@"%lu", (unsigned long)[self.storeItems count]);
     return [self.storeItems count];
 };
 
@@ -82,10 +78,10 @@
 
 #pragma mark - Collection View Delegate Methods
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Select Item
 }
+
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
 }
