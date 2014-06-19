@@ -49,7 +49,6 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    NSLog(@"%lu", (unsigned long)[self.storeItems count]);
     return [self.storeItems count];
 };
 
