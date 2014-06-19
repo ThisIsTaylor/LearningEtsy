@@ -28,10 +28,33 @@ SPEC_BEGIN(TEMViewControllerSpec)
             NSString *sampleTitle = @"ThisIsTaylor";
             [[viewController.storeTitle should] receive:@selector(setText:) withArguments:sampleTitle];
             
-            KWCaptureSpy *spy= [viewController.etsyService captureArgument:@selector(getEtsyStore:) atIndex:0];
+            KWCaptureSpy *spy = [viewController.etsyService captureArgument:@selector(getEtsyStore:) atIndex:0];
             [viewController viewDidLoad];
             void (^capturedSuccessBlock)(NSString *) = spy.argument;
             capturedSuccessBlock(sampleTitle);
+        });
+        
+        it(@"updates numberOfListings Label with the number of active listings on Etsy", ^{
+            viewController.numberOfListings = [UILabel nullMock];
+            NSInteger sampleNumber = 12;
+            NSString *sampleNumberString = [@(sampleNumber) stringValue];
+            [[viewController.numberOfListings should] receive:@selector(setText:) withArguments:sampleNumberString];
+            
+            KWCaptureSpy *spy = [viewController.etsyService captureArgument:@selector(getEtsyListingNumber:) atIndex:0];
+            [viewController viewDidLoad];
+            void (^capturedSuccessBlock)(NSInteger) = spy.argument;
+            capturedSuccessBlock(sampleNumber);
+        });
+        
+        it(@"", ^{
+            viewController.storeSummary = [UITextView nullMock];
+            NSString *sampleSummary = @"This is a very short summary";
+            [[viewController.storeSummary should] receive:@selector(setText:) withArguments:sampleSummary];
+            
+            KWCaptureSpy *spy = [viewController.etsyService captureArgument:@selector(getEtsyStoreSummary:) atIndex:0];
+            [viewController viewDidLoad];
+            void (^capturedSuccessBlock)(NSString *) = spy.argument;
+            capturedSuccessBlock(sampleSummary);
         });
 	});
 
