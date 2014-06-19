@@ -19,7 +19,7 @@ SPEC_BEGIN(TEMViewControllerSpec)
             viewController = [[TEMViewController alloc] init];
         });
         
-		it(@"has a weatherService property that is not nil", ^{
+		it(@"has an etsyService property that is not nil", ^{
             [[viewController.etsyService shouldNot] beNil];
         });
         
