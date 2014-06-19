@@ -17,10 +17,12 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
         
         __block TEMEtsyService *etsyService;
         __block NSString *urlString;
+        __block NSString *urlProductString;
         
         beforeEach(^{
             etsyService = [[TEMEtsyService alloc] init];
             urlString = @"https://openapi.etsy.com/v2/shops/BritzyThrifty?api_key=sit1ohd4fxo7ojty36trvuj9";
+            urlProductString = @"https://openapi.etsy.com/v2/shops/BritzyThrifty/listings/active?api_key=sit1ohd4fxo7ojty36trvuj9&includes=MainImage";
         });
         
 		it(@"should have a getEtsyStore method", ^{
@@ -86,6 +88,7 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
                     return [[request.URL absoluteString] isEqualToString:urlString];
                 } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
                     return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"sampleEtsy.json", nil) statusCode:200 headers:@{@"Content-Type":@"text/json"}];
+                    
                     __block NSString *reportedSummary;
                     
                     void (^blockThatGetsStoreSummary)(NSString *) = ^(NSString *storeSummary){
@@ -96,6 +99,28 @@ SPEC_BEGIN(TEMEtsyServiceSpec)
                     
                     [[expectFutureValue(reportedSummary) shouldEventuallyBeforeTimingOutAfter(1.0)] equal:summaryReportedByOHHTTPStubs];
                 }];
+            });
+            context(@"When getEtsyStoreItems", ^{
+                xit(@"Should count the correct number of product items in store", ^{
+                    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+                        return [[request.URL absoluteString] isEqualToString:urlProductString];
+                    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"sampleEtsyProducts.json", nil) statusCode:200 headers:@{@"Content-Type":@"tex/json"}];
+                        
+                        __block NSArray *reportedItems;
+                        __block NSInteger *productCount;
+                        
+                        void (^blockThatGetsStoreItems)(NSArray *) = ^(NSArray *numberOfItems){
+                            reportedItems = [numberOfItems valueForKey:@"results"];
+                            productCount = [reportedItems count];
+                        };
+                        
+                        [etsyService getEtsyStoreItems:blockThatGetsStoreItems];
+                        NSInteger reportedNumber = 19;
+                    
+                        [[expectFutureValue(theValue(productCount)) shouldEventuallyBeforeTimingOutAfter(1.0)] equal:theValue(reportedNumber)];
+                    }];
+                });
             });
         });
 	});

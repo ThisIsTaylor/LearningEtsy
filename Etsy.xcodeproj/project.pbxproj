@@ -27,6 +27,7 @@
 		70A453E3194B8611008E03D4 /* TEMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A453E1194B8611008E03D4 /* TEMViewController.m */; };
 		70A453E4194B8611008E03D4 /* TEMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70A453E2194B8611008E03D4 /* TEMViewController.xib */; };
 		70D987FD1951E7D900480FEE /* TEMProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D987FC1951E7D900480FEE /* TEMProductCell.m */; };
+		70D987FF1952415200480FEE /* sampleEtsyProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = 70D987FE1952415200480FEE /* sampleEtsyProducts.json */; };
 		70DCDD6B194F387900544AB9 /* sampleEtsy.json in Resources */ = {isa = PBXBuildFile; fileRef = 70DCDD6A194F387900544AB9 /* sampleEtsy.json */; };
 		70DCDD6D194F486600544AB9 /* TEMViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCDD6C194F486600544AB9 /* TEMViewControllerSpec.m */; };
 		70DCDD6F194F487100544AB9 /* TEMAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DCDD6E194F487100544AB9 /* TEMAppDelegateSpec.m */; };
@@ -74,6 +75,7 @@
 		70A453E2194B8611008E03D4 /* TEMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMViewController.xib; sourceTree = "<group>"; };
 		70D987FB1951E7D900480FEE /* TEMProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMProductCell.h; sourceTree = "<group>"; };
 		70D987FC1951E7D900480FEE /* TEMProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMProductCell.m; sourceTree = "<group>"; };
+		70D987FE1952415200480FEE /* sampleEtsyProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleEtsyProducts.json; sourceTree = "<group>"; };
 		70DCDD6A194F387900544AB9 /* sampleEtsy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleEtsy.json; sourceTree = "<group>"; };
 		70DCDD6C194F486600544AB9 /* TEMViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMViewControllerSpec.m; sourceTree = "<group>"; };
 		70DCDD6E194F487100544AB9 /* TEMAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMAppDelegateSpec.m; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				70DCDD6C194F486600544AB9 /* TEMViewControllerSpec.m */,
 				70DCDD6E194F487100544AB9 /* TEMAppDelegateSpec.m */,
 				70DCDD6A194F387900544AB9 /* sampleEtsy.json */,
+				70D987FE1952415200480FEE /* sampleEtsyProducts.json */,
 				709F7072194B4B68003DA35F /* Supporting Files */,
 			);
 			path = EtsyTests;
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70DCDD6B194F387900544AB9 /* sampleEtsy.json in Resources */,
+				70D987FF1952415200480FEE /* sampleEtsyProducts.json in Resources */,
 				709F7076194B4B68003DA35F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
