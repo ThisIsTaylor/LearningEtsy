@@ -23,10 +23,12 @@ SPEC_BEGIN(TEMCollectionViewControllerSpec)
             [[collectionViewController.etsyService shouldNot] beNil];
         });
         
-        xit(@"should update cell productLabel with the product names", ^{
+        it(@"should update cell productLabel with the product names", ^{
             [collectionViewController.productCollecionView registerNib:[UINib nibWithNibName:@"TEMProductCell" bundle:nil] forCellWithReuseIdentifier:@"EtsyProductCell"];
             
             TEMProductCell *cell = [[TEMProductCell alloc] init];
+            
+            if (collectionViewController.storeItems){
             cell.productLabel = [UILabel nullMock];
             NSString *sampleProduct = @"A Product Title";
             
@@ -36,6 +38,7 @@ SPEC_BEGIN(TEMCollectionViewControllerSpec)
             [collectionViewController viewDidLoad];
             void (^capturedSuccessBlock)(NSString *) = spy.argument;
             capturedSuccessBlock(sampleProduct);
+            }
 
         });
 	});
