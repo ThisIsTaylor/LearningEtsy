@@ -35,19 +35,19 @@
 - (void)populatesStoreTextFromEtsy {
     
     void (^successBlock)(NSArray *) = ^(NSArray *etsyStore){
-        self.etsyStore = self.etsyService.etsyStore;
+        self.etsyStore = etsyStore;
         
-        NSString *shopNameAsString = [[self.etsyStore firstObject] valueForKeyPath: @"shop_name"];
+        NSString *shopNameAsString = [[etsyStore firstObject] valueForKeyPath: @"shop_name"];
         UILabel *shopName = self.storeTitle;
         [shopName setText:shopNameAsString];
         
-        NSNumber *listingCount = [[self.etsyStore firstObject] valueForKeyPath:@"listing_active_count"];
+        NSNumber *listingCount = [[etsyStore firstObject] valueForKeyPath:@"listing_active_count"];
         NSInteger listingNumber = [listingCount integerValue];
         NSString *listingString = [@(listingNumber) stringValue];
         UILabel *listingNumberLabel = self.numberOfListings;
         [listingNumberLabel setText:listingString];
         
-        NSString *storeSummaryAsString = [[self.etsyStore firstObject] valueForKeyPath:@"announcement"];
+        NSString *storeSummaryAsString = [[etsyStore firstObject] valueForKeyPath:@"announcement"];
         UITextView *storeSummaryTextView = self.storeSummary;
         [storeSummaryTextView setText:storeSummaryAsString];
     };

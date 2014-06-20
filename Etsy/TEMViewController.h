@@ -17,4 +17,6 @@
 @property (nonatomic, weak) IBOutlet UITextView *storeSummary;
 @property (nonatomic) NSArray *etsyStore;
 
+- (void)populatesStoreTextFromEtsy;
+
 @end
