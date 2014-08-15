@@ -35,7 +35,7 @@
     self.productCollecionView.backgroundColor = [UIColor whiteColor];
     
     void (^successBlock)(NSArray *) = ^(NSArray *etsyStoreItems){
-        self.storeItems = self.etsyService.etsyStoreItems;
+        self.storeItems = etsyStoreItems;
         
         [self.productCollecionView reloadData];
     };
@@ -74,16 +74,5 @@
     
     return cell;
 };
-
-
-#pragma mark - Collection View Delegate Methods
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // TODO: Select Item
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // TODO: Deselect item
-}
 
 @end
