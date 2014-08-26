@@ -27,31 +27,47 @@ SPEC_BEGIN(TEMCollectionViewControllerSpec)
         });
         
         it(@"should update cell productLabel with the product names", ^{
-            if (collectionViewController.storeItems){
             cell.productLabel = [UILabel nullMock];
-            NSString *sampleProduct = @"A Product Title";
+            NSString *sampleProduct = @"Bright & Bubbly Cardigan";
             
-            [[cell.productLabel should] receive:@selector(setText:) withArguments:sampleProduct];
+            NSDictionary *dictionary = @{@"title":sampleProduct};
+            NSArray *anArray = @[dictionary];
+            collectionViewController.storeItems = anArray;
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            NSString *capturedString = [[collectionViewController.storeItems objectAtIndex:indexPath.row] valueForKey:@"title"];
+            
+            [[cell.productLabel should] receive:@selector(setText:) withArguments:capturedString];
             
             KWCaptureSpy *spy = [collectionViewController.etsyService captureArgument:@selector(getEtsyStoreItems:) atIndex:0];
+            
+            [cell.productLabel setText:sampleProduct];
             [collectionViewController viewDidLoad];
-            void (^capturedSuccessBlock)(NSString *) = spy.argument;
-            capturedSuccessBlock(sampleProduct);
-            }
+            
+            void (^capturedSuccessBlock)(NSArray *) = spy.argument;
+            capturedSuccessBlock(anArray);
         });
         
         it(@"should update cell productImageView to display product images", ^{
-            if (collectionViewController.storeItems){
-                cell.productImageView = [UIImageView nullMock];
-                NSString *sampleImageURL = @"this is an image URL";
-                
-                [[cell.productImageView should] receive:@selector(setImageWithURL:) withArguments:sampleImageURL];
-                
-                KWCaptureSpy *spy = [collectionViewController.etsyService captureArgument:@selector(getEtsyStoreItems:) atIndex:0];
-                [collectionViewController viewDidLoad];
-                void (^capturedSuccessBlock)(NSString *) = spy.argument;
-                capturedSuccessBlock(sampleImageURL);
-            }
+            cell.productImageView = [UIImageView nullMock];
+            
+            NSString *anImageURLString = @"https://www.etsy.com/listing/128812026/bright-bubbly-cardigan?utm_source=practiceapp&utm_medium=api&utm_campaign=api";
+            NSURL *sampleImageURL = [[NSURL alloc] initWithString: anImageURLString];
+            
+            NSDictionary *dictionary = @{@"MainImage":@{@"url_170x135":sampleImageURL}};
+            NSArray *anArray = @[dictionary];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            NSString *capturedString = [[[anArray objectAtIndex:indexPath.row] valueForKeyPath:@"MainImage"] valueForKeyPath:@"url_170x135"];
+            
+            [[cell.productImageView should] receive:@selector(setImageWithURL:) withArguments:capturedString];
+            
+            KWCaptureSpy *spy = [collectionViewController.etsyService captureArgument:@selector(getEtsyStoreItems:) atIndex:0];
+            
+            [cell.productImageView setImageWithURL:sampleImageURL];
+            [collectionViewController viewDidLoad];
+            
+            void (^capturedSuccessBlock)(NSArray *) = spy.argument;
+            capturedSuccessBlock(anArray);
+
         });
 
 	});

@@ -13,11 +13,10 @@
 
 @property (nonatomic) AFHTTPRequestOperationManager *operationManager;
 @property (nonatomic) NSArray *etsyStoreItems;
+@property (nonatomic) NSArray *etsyStore;
 
 //Network Call Methods for Main View
-- (void)getEtsyStore:(void (^)(NSString *))successBlock;
-- (void)getEtsyListingNumber: (void (^)(NSInteger))successBlock;
-- (void)getEtsyStoreSummary: (void (^)(NSString *))successBlock;
+- (void)getEtsyStore: (void (^)(NSArray *))successBlock;
 
 //Network Call Methods for Collection View
 - (void)getEtsyStoreItems: (void (^)(NSArray *))successBlock;

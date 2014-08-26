@@ -20,41 +20,11 @@
 
 #pragma mark - Main View Network Methods
 
-- (void)getEtsyStore:(void (^)(NSString *))successBlock{
-    
+- (void)getEtsyStore: (void (^)(NSArray *))successBlock {
     void (^newSuccessBlock)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject){
         
-        NSString *etsyStoreName = [[[responseObject valueForKeyPath:@"results"]firstObject] valueForKeyPath: @"shop_name"];
-        successBlock(etsyStoreName);
-        
-    };
-    
-    [self.operationManager GET:@"https://openapi.etsy.com/v2/shops/BritzyThrifty?api_key=sit1ohd4fxo7ojty36trvuj9"
-                    parameters:nil
-                       success:newSuccessBlock
-                       failure:nil];
-}
-
-- (void)getEtsyListingNumber: (void (^)(NSInteger))successBlock {
-    void (^newSuccessBlock)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject){
-        
-        NSNumber *listingObject = [[[responseObject valueForKey:@"results"]firstObject]valueForKey:@"listing_active_count"];
-        NSInteger currentListingNumber = [listingObject integerValue];
-        successBlock(currentListingNumber);
-    };
-    
-    [self.operationManager GET:@"https://openapi.etsy.com/v2/shops/BritzyThrifty?api_key=sit1ohd4fxo7ojty36trvuj9"
-                    parameters:nil
-                       success:newSuccessBlock
-                       failure:nil];
-    
-}
-
-- (void)getEtsyStoreSummary: (void (^)(NSString *))successBlock {
-    void (^newSuccessBlock)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject){
-        
-        NSString *etsyStoreSummary = [[[responseObject valueForKeyPath:@"results"]firstObject] valueForKeyPath: @"announcement"];
-        successBlock(etsyStoreSummary);
+        self.etsyStore = [responseObject valueForKeyPath:@"results"];
+        successBlock(self.etsyStore);
         
     };
     
