@@ -2,8 +2,8 @@
 //  TEMCollectionViewController.m
 //  Etsy
 //
-//  Created by DL Admin on 6/16/14.
-//  Copyright (c) 2014 Detroit Labs. All rights reserved.
+//  Created by Taylor McGregor on 6/16/14.
+//  Copyright (c) 2014 Taylor McGregor. All rights reserved.
 //
 
 #import "TEMCollectionViewController.h"
